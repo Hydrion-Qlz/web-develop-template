@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjtu.xjtuse.assistance.SimilarWeb.dao.SimilarWebDao">
+    <select id="getSimilarWebInfo" resultType="com.xjtu.xjtuse.assistance.SimilarWeb.SimilarWebInfo">
+        select id,
+               source_url         as sourceUrl,
+               source_id          as sourceId,
+               target_url         as targetUrl,
+               target_id          as targetId,
+               similarity,
+               algorithm,
+               target_folder_name as targetFolderName
+        from similarwebinfo
+        where source_url = #{url}
+    </select>
+</mapper>
